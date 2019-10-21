@@ -75,7 +75,7 @@ Updates the company's info, and is only allowed if the user is the admin, and as
 | phone      | String: False | Must be at least a 10 character string.                         |
 | city       | String: false | City the company is located at                                  |
 | state      | String: false | State the company located at                                    |
-| package_ID | Int: true     | Package ID which will only be 1, 2, 3, or 4, will default to 1. |
+| package_ID | Int: false    | Package ID which will only be 1, 2, 3, or 4, will default to 1. |
 
 ### URL Parameters
 

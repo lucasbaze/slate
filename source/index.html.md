@@ -12,6 +12,7 @@ includes:
     - auth
     - company
     - users
+    - package
     - snacks
     - errors
 

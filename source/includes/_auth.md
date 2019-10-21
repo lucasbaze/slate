@@ -57,7 +57,7 @@ If the company code doesn't exist, everything explodes. JK. But please don't let
 
 ### Endpoint
 
-`POST /register`
+`POST /auth/register`
 
 ### POST Register Body Parameters
 
@@ -100,17 +100,17 @@ Under construction - Code gremlins currently turning caffeine into code
 
 ### Endpoint
 
-`POST /register/company`
+`POST /auth/register/company`
 
 ### POST Register Company Body Parameters
 
-| Parameter  | Required     | Description                                                     |
-| ---------- | ------------ | --------------------------------------------------------------- |
-| name       | String: true | Company Name.                                                   |
-| phone      | String: true | Must be at least a 10 character string.                         |
-| city       | String: true | City the company is located at                                  |
-| state      | String: true | State the company located at                                    |
-| package_ID | Int: true    | Package ID which will only be 1, 2, 3, or 4, will default to 1. |
+| Parameter  | Required     | Description                                                                                   |
+| ---------- | ------------ | --------------------------------------------------------------------------------------------- |
+| name       | String: true | Company Name.                                                                                 |
+| phone      | String: true | Must be at least a 10 character string.                                                       |
+| city       | String: true | City the company is located at                                                                |
+| state      | String: true | State the company located at                                                                  |
+| package_ID | Int: false   | Package ID which will only be 1, 2, 3, or 4, will default to 1. You can put this value later. |
 
 ## POST Login
 
@@ -141,7 +141,7 @@ Under construction - Code gremlins currently turning caffeine into code
 
 ### Endpoint
 
-`POST /login`
+`POST /auth/login`
 
 ### POST Login Body Parameters
 
@@ -168,4 +168,4 @@ If you can't figure this one out, I can't help you.
 
 ### Endpoint
 
-`GET /logout`
+`GET /auth/logout`

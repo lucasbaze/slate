@@ -10,6 +10,7 @@ The Snackify API uses the following error codes:
 | 404        | Not Found -- The specified kitten could not be found.                                                       |
 | 405        | Method Not Allowed -- You tried to access an endpoint with an invalid method (i.e. POST, GET, PUT, DELETE). |
 | 406        | Not Acceptable -- You requested a format that isn't json.                                                   |
+| 409        | Missing Info -- Your request is missing informaion.                                                         |
 | 410        | Gone -- The info requested has been removed from our servers.                                               |
 | 418        | I'm a teapot.                                                                                               |
 | 429        | Too Many Requests -- You're requesting too much data! Slow down!                                            |
