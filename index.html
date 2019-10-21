@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -211,9 +211,6 @@
     <div class="toc-wrapper">
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
@@ -226,18 +223,72 @@
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#post-register" class="toc-h2 toc-link" data-title="POST Register">POST Register</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#post-register-company" class="toc-h2 toc-link" data-title="POST Register Company">POST Register Company</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#post-login" class="toc-h2 toc-link" data-title="POST Login">POST Login</a>
+                  </li>
+                  <li>
+                    <a href="#get-logout" class="toc-h2 toc-link" data-title="GET Logout">GET Logout</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#company" class="toc-h1 toc-link" data-title="Company">Company</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-company-info" class="toc-h2 toc-link" data-title="GET Company Info">GET Company Info</a>
+                  </li>
+                  <li>
+                    <a href="#put-company-info" class="toc-h2 toc-link" data-title="PUT Company Info">PUT Company Info</a>
+                  </li>
+                  <li>
+                    <a href="#get-company-snacks" class="toc-h2 toc-link" data-title="GET Company Snacks">GET Company Snacks</a>
+                  </li>
+                  <li>
+                    <a href="#post-company-snacks" class="toc-h2 toc-link" data-title="POST Company Snacks">POST Company Snacks</a>
+                  </li>
+                  <li>
+                    <a href="#put-company-snacks" class="toc-h2 toc-link" data-title="PUT Company Snacks">PUT Company Snacks</a>
+                  </li>
+                  <li>
+                    <a href="#delete-company-snack" class="toc-h2 toc-link" data-title="DELETE Company Snack">DELETE Company Snack</a>
+                  </li>
+                  <li>
+                    <a href="#get-company-suggested-snacks" class="toc-h2 toc-link" data-title="GET Company Suggested Snacks">GET Company Suggested Snacks</a>
+                  </li>
+                  <li>
+                    <a href="#get-company-users" class="toc-h2 toc-link" data-title="GET Company Users">GET Company Users</a>
+                  </li>
+                  <li>
+                    <a href="#delete-company-user" class="toc-h2 toc-link" data-title="DELETE Company User">DELETE Company User</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#users" class="toc-h1 toc-link" data-title="Users">Users</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-user-info" class="toc-h2 toc-link" data-title="GET User Info">GET User Info</a>
+                  </li>
+                  <li>
+                    <a href="#post-user-snacks" class="toc-h2 toc-link" data-title="POST User Snacks">POST User Snacks</a>
+                  </li>
+                  <li>
+                    <a href="#delete-user-snacks" class="toc-h2 toc-link" data-title="DELETE User Snacks">DELETE User Snacks</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#snacks" class="toc-h1 toc-link" data-title="Snacks">Snacks</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-snacks" class="toc-h2 toc-link" data-title="GET Snacks">GET Snacks</a>
                   </li>
               </ul>
           </li>
@@ -254,190 +305,800 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the Snackify API! You can use this API to access Snackify API endpoints, which can get information on snacks, companies, users, and snacks selections.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>This is subject to change without notice (but I&#39;ll do my best), so just be wary of that. If you&#39;ve got a problem, you can take it up with my <a href="http://static.dudeiwantthat.com/img/gear/office/the-complaint-department-28718.jpg">complaint department</a>.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>The base URL is:</p>
+
+<p><code>https://url-to-snackify-server.herokuapp.com</code></p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
-<p>To authorize, use this code:</p>
+<p>To authorize, it is recommended to create an axios handler in a separete folder with the following:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'axios'</span><span class="p">);</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<span class="kr">const</span> <span class="nx">axiosInstance</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+        <span class="na">baseURL</span><span class="p">:</span> <span class="s1">'BASE_URL'</span><span class="p">,</span>
+        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">withCredentials</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">});</span>
+<span class="p">};</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">axiosInstance</span><span class="p">;</span>
 </code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
+<p>Snackify utilizes express-sessions to maintain session information. In order to access any of the endpoints, you will need to login at <a href="http://snackify.zeit.io">Snackify Register</a>. &lt;- will need to be replaced.</p>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+<p>No need to save a token or anything client side. That&#39;s for node noobs. The server will send you a cookie that will be handled by your browser and returned by axios if setup as recommended.</p>
+<h2 id='post-register'>POST Register</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Example POST request</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amanda@lambdaschool.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"password"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lambda-school-snackify-123"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully created account"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amanda Lane"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amanada@lambdaschool.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This enpoint allows the user to register.</p>
+
+<p>If the user does not have a company code, this will create a user account and an empty company account. The company ID is created if no company code matches an existing company;</p>
+
+<p>If the company code doesn&#39;t exist, everything explodes. JK. But please don&#39;t let everything explode.</p>
+<h3 id='endpoint'>Endpoint</h3>
+<p><code>POST /register</code></p>
+<h3 id='post-register-body-parameters'>POST Register Body Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>email</td>
+<td>String: true</td>
+<td>Must be a valid email address. Throw away emails will get rejected.</td>
 </tr>
 <tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>password</td>
+<td>String: true</td>
+<td>Must be at least 8 characters long.</td>
+</tr>
+<tr>
+<td>company_code</td>
+<td>String: false</td>
+<td>This is the server-side generated company code that is given to invited users. NOT users signing up for the first time</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<h2 id='post-register-company'>POST Register Company</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Example POST Request</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lambda School"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123) 456-7890"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Palo Alto"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"package_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lambda School"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123) 456-7890"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Palo Alto"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"package_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-2'>Endpoint</h3>
+<p><code>POST /register/company</code></p>
+<h3 id='post-register-company-body-parameters'>POST Register Company Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String: true</td>
+<td>Company Name.</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String: true</td>
+<td>Must be at least a 10 character string.</td>
+</tr>
+<tr>
+<td>city</td>
+<td>String: true</td>
+<td>City the company is located at</td>
+</tr>
+<tr>
+<td>state</td>
+<td>String: true</td>
+<td>State the company located at</td>
+</tr>
+<tr>
+<td>package_ID</td>
+<td>Int: true</td>
+<td>Package ID which will only be 1, 2, 3, or 4, will default to 1.</td>
+</tr>
+</tbody></table>
+<h2 id='post-login'>POST Login</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<blockquote>
+<p>Example Post Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amanda@lambadschool.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"password: "</span><span class="err">********</span><span class="s2">"
+}
+</span></code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amanda Lane"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"admin"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amanda@lambdaschool.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-3'>Endpoint</h3>
+<p><code>POST /login</code></p>
+<h3 id='post-login-body-parameters'>POST Login Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>String: true</td>
+<td>Must be a valid email address.</td>
+</tr>
+<tr>
+<td>password</td>
+<td>String: true</td>
+<td>Must be at least 8 characters long.</td>
+</tr>
+</tbody></table>
+<h2 id='get-logout'>GET Logout</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<p>If you can&#39;t figure this one out, I can&#39;t help you.</p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You're leaving? Already? But we were just getting to know each other."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-4'>Endpoint</h3>
+<p><code>GET /logout</code></p>
+<h1 id='company'>Company</h1>
+<p>The company endpoints will be used for most operations when the User that is logged in is the admin on the account.</p>
+<h2 id='get-company-info'>GET Company Info</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lambda School"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123) 456-7890"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Palo Alto"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"package_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint'>Endpoint</h3>
+<p><code>GET /company/{company_ID}</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Property</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>company_ID</td>
+<td>Int: true</td>
+<td>Integer value of the company&#39;s ID</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='put-company-info'>PUT Company Info</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>Updates the company&#39;s info, and is only allowed if the user is the admin, and associated with the same company. But I don&#39;t know what kind of voodoo magic the client or user may perform to screw that up.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>Example PUT Request</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gamma School"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(890) 765-4321"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Salt Lake City"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"package_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gamma School"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(890) 765-4321"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Salt Lake City"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"package_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-2'>Endpoint</h3>
+<p><code>PUT /company/{company_ID}</code></p>
+<h3 id='body-parameters'>Body Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>name</td>
+<td>String: false</td>
+<td>Company Name.</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>String: False</td>
+<td>Must be at least a 10 character string.</td>
+</tr>
+<tr>
+<td>city</td>
+<td>String: false</td>
+<td>City the company is located at</td>
+</tr>
+<tr>
+<td>state</td>
+<td>String: false</td>
+<td>State the company located at</td>
+</tr>
+<tr>
+<td>package_ID</td>
+<td>Int: true</td>
+<td>Package ID which will only be 1, 2, 3, or 4, will default to 1.</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_ID</td>
+<td>Int: true</td>
+<td>Integer value of company&#39;s ID</td>
+</tr>
+</tbody></table>
+<h2 id='get-company-snacks'>GET Company Snacks</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<p>These are the snacks the company has selected to be delivered.</p>
+
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lambda School"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Skittles"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrigley"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54 oz bag"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Doritos"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Frito-Lay"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16 x 9oz bags"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://target.scene7.com/is/image/Target/GUEST_ac2b08b4-12e8-496c-ab09-dd530740da9c?wid=488&amp;hei=488&amp;fmt=pjpeg"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-3'>Endpoint</h3>
+<p><code>GET /company/{company_ID}/snacks</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_ID</td>
+<td>Int: true</td>
+<td>Integer value of company&#39;s ID</td>
+</tr>
+</tbody></table>
+<h2 id='post-company-snacks'>POST Company Snacks</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<p>This will manifest the snack to the company&#39;s selected snacks.</p>
+
+<p>It will automatically set the quantity to 1 for the snack.</p>
+
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"snack"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Doritos"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-4'>Endpoint</h3>
+<p><code>POST /company/{company_ID}/snacks/{snack_ID}</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_ID</td>
+<td>Int: true</td>
+<td>Integer value of company&#39;s ID</td>
+</tr>
+<tr>
+<td>snack_ID</td>
+<td>Int: true</td>
+<td>Integer value of snack ID</td>
+</tr>
+</tbody></table>
+<h2 id='put-company-snacks'>PUT Company Snacks</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<p>This will primarily update the quanitity requested on the users</p>
+
+<blockquote>
+<p>Example PUT Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"snack"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Doritos"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-5'>Endpoint</h3>
+<p><code>PUT /company/{company_ID}/snacks/{snack_ID}</code></p>
+<h3 id='body-parameters-2'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>quantity</td>
+<td>Int: true</td>
+<td>Integer value of the quantity requested</td>
+</tr>
+</tbody></table>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_ID</td>
+<td>Int: true</td>
+<td>Integer value of company&#39;s ID</td>
+</tr>
+<tr>
+<td>snack_ID</td>
+<td>Int: true</td>
+<td>Integer value of snack ID</td>
+</tr>
+</tbody></table>
+<h2 id='delete-company-snack'>DELETE Company Snack</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<p>This will remove the specific snack ID from the company ID. Don&#39;t worry, it&#39;s not gonna delete any snacks from the database.</p>
+
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"snack"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Doritos"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully destroyed snacks existance from company"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-6'>Endpoint</h3>
+<p><code>DELETE /company/{company_ID}/snacks/{snack_ID}</code></p>
+<h3 id='url-parameters-6'>URL Parameters</h3>
+<p>Basically the exact same as the POST</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_ID</td>
+<td>Int: true</td>
+<td>Company ID.</td>
+</tr>
+<tr>
+<td>snack_ID</td>
+<td>Int: true</td>
+<td>Snack ID.</td>
+</tr>
+</tbody></table>
+<h2 id='get-company-suggested-snacks'>GET Company Suggested Snacks</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<p>These are the gooey yum yum&#39;s those employees desperately crave.</p>
+
+<p>These are the snacks suggested by the company&#39;s users.</p>
+
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lambda School"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smokehouse Almonds"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue Diamond"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16 oz bag"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.riteaid.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/4/041570030837.jpg"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Skittles"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrigley"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54 oz bag"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-7'>Endpoint</h3>
+<p><code>GET /company/{company_ID/suggested</code></p>
+<h3 id='url-parameters-7'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_ID</td>
+<td>Int: true</td>
+<td>Integer value of company&#39;s ID</td>
+</tr>
+</tbody></table>
+<h2 id='get-company-users'>GET Company Users</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<p>Retrieve all the users from the mainframe that are assocaited with the company</p>
+
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lambda School"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"users"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amanda Lane"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amanda@lambdaschool.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elon Musk"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elon@lambdaschool.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"George Washington"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"george@lambdaschool.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-8'>Endpoint</h3>
+<p><code>GET /company/{company_ID}/users</code></p>
+<h3 id='url-parameters-8'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_ID</td>
+<td>Int: true</td>
+<td>Integer value of company&#39;s ID</td>
+</tr>
+</tbody></table>
+<h2 id='delete-company-user'>DELETE Company User</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<p>Need to determine if I&#39;m going to remove the user from teh database or just set a revoked flag onto the user.</p>
+
+<p>If I set revoked, I&#39;d have to unset flag to let them back in
+If I delete it, then they can just add back in, but then the user would have to create another acccount.</p>
+<h3 id='endpoint-9'>Endpoint</h3>
+<p><code>DELETE /company/{company_ID}/users/{user_ID}</code></p>
+<h3 id='url-parameters-9'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>company_ID</td>
+<td>Int: true</td>
+<td>Integer value of company&#39;s ID</td>
+</tr>
+<tr>
+<td>user_ID</td>
+<td>Int: true</td>
+<td>Integer value of user&#39;s ID</td>
+</tr>
+</tbody></table>
+<h1 id='users'>Users</h1>
+<p>The users endpoints are for users of a company but NOT the admins.</p>
+<h2 id='get-user-info'>GET User Info</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"company_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amanda Lane"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amanda@lambdaschool.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smokehouse Almonds"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue Diamond"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16 oz bag"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.riteaid.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/4/041570030837.jpg"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Skittles"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrigley"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54 oz bag"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint'>Endpoint</h3>
+<p><code>GET /users/{user_ID}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_ID</td>
+<td>Int: true</td>
+<td>Integer value of the users ID</td>
+</tr>
+</tbody></table>
+<h2 id='post-user-snacks'>POST User Snacks</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully manifested suggested snack to company's suggested snacks"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-2'>Endpoint</h3>
+<p><code>POST /users/{user_ID}/snacks/{snack_ID}</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_ID</td>
+<td>Int: true</td>
+<td>Integer value of the users ID</td>
+</tr>
+<tr>
+<td>snack_ID</td>
+<td>Int: true</td>
+<td>Integer value of the snacks ID</td>
+</tr>
+</tbody></table>
+<h2 id='delete-user-snacks'>DELETE User Snacks</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<p>Will remove the specific user&#39;s suggested snacks.</p>
+
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully destroyed suggested snack from user and user's suggested snacks"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-3'>Endpoint</h3>
+<p><code>DELETE /users/{user_ID}/snacks/{snack_ID}</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_ID</td>
+<td>Int: true</td>
+<td>Integer value of the users ID</td>
+</tr>
+<tr>
+<td>snack_ID</td>
+<td>Int: true</td>
+<td>Integer value of the snacks ID</td>
+</tr>
+</tbody></table>
+<h1 id='snacks'>Snacks</h1>
+<p>The snacks endpoint will return a paginated result of the snacks that are available</p>
+<h2 id='get-snacks'>GET Snacks</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+<h3 id='endpoint'>Endpoint</h3>
+<p><code>GET /snacks</code></p>
+
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url to first level of snacks"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url to next level of snacks"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smokehouse Almonds"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue Diamond"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16 oz bag"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.riteaid.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/4/041570030837.jpg"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Skittles"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrigley"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54 oz bag"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Doritos"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Frito-Lay"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16 x 9oz bags"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://target.scene7.com/is/image/Target/GUEST_ac2b08b4-12e8-496c-ab09-dd530740da9c?wid=488&amp;hei=488&amp;fmt=pjpeg"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='response-description'>Response Description</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first</td>
+<td>url of the first level of snacks</td>
+</tr>
+<tr>
+<td>next</td>
+<td>url of the next level of snacks</td>
+</tr>
+<tr>
+<td>snacks/name</td>
+<td>Name of the snack.</td>
+</tr>
+<tr>
+<td>snacks/brand</td>
+<td>Company brand of the snack.</td>
+</tr>
+<tr>
+<td>snacks/oum</td>
+<td>Unit of Measure. If the user changes the quantity, this is how much it will increment or decrement by.</td>
+</tr>
+<tr>
+<td>snacks/img_url</td>
+<td>A url for an unformatted picture of the snack.</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
+<p>The Snackify API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -451,11 +1112,11 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>Unauthorized -- Your Session Token is not set or invalid.</td>
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- The info requested is hidden for administrators only.</td>
 </tr>
 <tr>
 <td>404</td>
@@ -463,7 +1124,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>Method Not Allowed -- You tried to access an endpoint with an invalid method (i.e. POST, GET, PUT, DELETE).</td>
 </tr>
 <tr>
 <td>406</td>
@@ -471,7 +1132,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>Gone -- The info requested has been removed from our servers.</td>
 </tr>
 <tr>
 <td>418</td>
@@ -479,7 +1140,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>Too Many Requests -- You&#39;re requesting too much data! Slow down!</td>
 </tr>
 <tr>
 <td>500</td>
@@ -494,9 +1155,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
