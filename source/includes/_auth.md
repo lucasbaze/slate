@@ -23,31 +23,54 @@ No need to save a token or anything client side. That's for node noobs. The serv
 
 ## POST Register
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
-</aside>
-
-> Example POST request
+> Example POST NON Admin request
 
 ```json
 {
-    "email": "amanda@lambdaschool.com",
+    "name": "Judge Judy",
+    "email": "judy@lambdaschool.com",
     "password": "password",
     "company_id": "lambda-school-snackify-123"
 }
 ```
 
-> Example Response
+> Example NON Admin Response
 
 ```json
 {
-    "message": "Successfully created account",
     "user_ID": 15,
-    "name": "Amanda Lane",
-    "email": "amanada@lambdaschool.com",
-    "company_ID": 4
+    "name": "Judge Judy",
+    "email": "judy@lambdaschool.com",
+    "company_ID": 4,
+    "admin": false
 }
 ```
+
+> Example POST New Admin request
+
+```json
+{
+    "name": "Dr. Frankenstein",
+    "email": "frakenstein@lambdaschool.com",
+    "password": "password"
+}
+```
+
+> Example New Admin Response
+
+```json
+{
+    "user_ID": 15,
+    "name": "Dr. Frankenstein",
+    "email": "frankenstein@lambdaschool.com",
+    "company_ID": 4,
+    "admin": true
+}
+```
+
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
 
 This enpoint allows the user to register.
 
@@ -132,6 +155,7 @@ Under construction - Code gremlins currently turning caffeine into code
 ```json
 {
     "name": "Amanda Lane",
+    "company_name": "Lambda School",
     "company_ID": 1,
     "user_ID": 1,
     "admin": true,

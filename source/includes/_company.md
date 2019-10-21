@@ -284,16 +284,19 @@ Retrieve all the users from the mainframe that are assocaited with the company
         {
             "name": "Amanda Lane",
             "email": "amanda@lambdaschool.com",
+            "admin": true,
             "user_ID": 1
         },
         {
             "name": "Elon Musk",
             "email": "elon@lambdaschool.com",
+            "admin": false,
             "user_ID": 2
         },
         {
             "name": "George Washington",
             "email": "george@lambdaschool.com",
+            "admin": false,
             "user_ID": 3
         }
     ]
