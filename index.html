@@ -285,6 +285,14 @@
               </ul>
           </li>
           <li>
+            <a href="#packages" class="toc-h1 toc-link" data-title="Packages">Packages</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-packages" class="toc-h2 toc-link" data-title="GET Packages">GET Packages</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#snacks" class="toc-h1 toc-link" data-title="Snacks">Snacks</a>
               <ul class="toc-list-h2">
                   <li>
@@ -363,7 +371,7 @@ Under construction - Code gremlins currently turning caffeine into code
 
 <p>If the company code doesn&#39;t exist, everything explodes. JK. But please don&#39;t let everything explode.</p>
 <h3 id='endpoint'>Endpoint</h3>
-<p><code>POST /register</code></p>
+<p><code>POST /auth/register</code></p>
 <h3 id='post-register-body-parameters'>POST Register Body Parameters</h3>
 <table><thead>
 <tr>
@@ -416,7 +424,7 @@ Under construction - Code gremlins currently turning caffeine into code
     </span><span class="s2">"company_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='endpoint-2'>Endpoint</h3>
-<p><code>POST /register/company</code></p>
+<p><code>POST /auth/register/company</code></p>
 <h3 id='post-register-company-body-parameters'>POST Register Company Body Parameters</h3>
 <table><thead>
 <tr>
@@ -447,8 +455,8 @@ Under construction - Code gremlins currently turning caffeine into code
 </tr>
 <tr>
 <td>package_ID</td>
-<td>Int: true</td>
-<td>Package ID which will only be 1, 2, 3, or 4, will default to 1.</td>
+<td>Int: false</td>
+<td>Package ID which will only be 1, 2, 3, or 4, will default to 1. You can put this value later.</td>
 </tr>
 </tbody></table>
 <h2 id='post-login'>POST Login</h2>
@@ -475,7 +483,7 @@ Under construction - Code gremlins currently turning caffeine into code
     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amanda@lambdaschool.com"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='endpoint-3'>Endpoint</h3>
-<p><code>POST /login</code></p>
+<p><code>POST /auth/login</code></p>
 <h3 id='post-login-body-parameters'>POST Login Body Parameters</h3>
 <table><thead>
 <tr>
@@ -509,7 +517,7 @@ Under construction - Code gremlins currently turning caffeine into code
     </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You're leaving? Already? But we were just getting to know each other."</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='endpoint-4'>Endpoint</h3>
-<p><code>GET /logout</code></p>
+<p><code>GET /auth/logout</code></p>
 <h1 id='company'>Company</h1>
 <p>The company endpoints will be used for most operations when the User that is logged in is the admin on the account.</p>
 <h2 id='get-company-info'>GET Company Info</h2>
@@ -604,7 +612,7 @@ Under construction - Code gremlins currently turning caffeine into code
 </tr>
 <tr>
 <td>package_ID</td>
-<td>Int: true</td>
+<td>Int: false</td>
 <td>Package ID which will only be 1, 2, 3, or 4, will default to 1.</td>
 </tr>
 </tbody></table>
@@ -1029,6 +1037,44 @@ Under construction - Code gremlins currently turning caffeine into code
 <td>Integer value of the snacks ID</td>
 </tr>
 </tbody></table>
+<h1 id='packages'>Packages</h1><h2 id='get-packages'>GET Packages</h2>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"small"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 - 10 employees"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">199.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"medium"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11 - 50 employees"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">399.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"large"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51 - 100 employees"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">599.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mega"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&gt;100 employees"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1999.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>Again, if you can&#39;t figure this one out... idk what to do.</p>
+<h3 id='endpoint'>Endpoint</h3>
+<p><code>GET /packages</code></p>
 <h1 id='snacks'>Snacks</h1>
 <p>The snacks endpoint will return a paginated result of the snacks that are available</p>
 <h2 id='get-snacks'>GET Snacks</h2>
@@ -1129,6 +1175,10 @@ Under construction - Code gremlins currently turning caffeine into code
 <tr>
 <td>406</td>
 <td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Missing Info -- Your request is missing informaion.</td>
 </tr>
 <tr>
 <td>410</td>
