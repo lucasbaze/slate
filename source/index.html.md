@@ -27,4 +27,4 @@ This is subject to change without notice (but I'll do my best), so just be wary 
 
 The base URL is:
 
-`https://url-to-snackify-server.herokuapp.com`
+`https://afternoon-tor-81402.herokuapp.com`

@@ -7,7 +7,7 @@ const axios = require('axios');
 
 const axiosInstance = () => {
     return axios.create({
-        baseURL: 'BASE_URL',
+        baseURL: 'https://afternoon-tor-81402.herokuapp.com',
         headers: {
             withCredentials: true,
         },
