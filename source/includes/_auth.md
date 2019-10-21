@@ -68,8 +68,8 @@ No need to save a token or anything client side. That's for node noobs. The serv
 }
 ```
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 This enpoint allows the user to register.
@@ -92,8 +92,8 @@ If the company code doesn't exist, everything explodes. JK. But please don't let
 
 ## POST Register Company
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 > Example POST Request
@@ -137,8 +137,8 @@ Under construction - Code gremlins currently turning caffeine into code
 
 ## POST Login
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 > Example Post Request
@@ -176,8 +176,8 @@ Under construction - Code gremlins currently turning caffeine into code
 
 ## GET Logout
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 If you can't figure this one out, I can't help you.
