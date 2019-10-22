@@ -228,7 +228,7 @@
                     <a href="#post-register" class="toc-h2 toc-link" data-title="POST Register">POST Register</a>
                   </li>
                   <li>
-                    <a href="#post-register-company" class="toc-h2 toc-link" data-title="POST Register Company">POST Register Company</a>
+                    <a href="#put-register-company" class="toc-h2 toc-link" data-title="PUT Register Company">PUT Register Company</a>
                   </li>
                   <li>
                     <a href="#post-login" class="toc-h2 toc-link" data-title="POST Login">POST Login</a>
@@ -277,10 +277,16 @@
                     <a href="#get-user-info" class="toc-h2 toc-link" data-title="GET User Info">GET User Info</a>
                   </li>
                   <li>
+                    <a href="#put-user-info" class="toc-h2 toc-link" data-title="PUT User Info">PUT User Info</a>
+                  </li>
+                  <li>
                     <a href="#post-user-snacks" class="toc-h2 toc-link" data-title="POST User Snacks">POST User Snacks</a>
                   </li>
                   <li>
                     <a href="#delete-user-snacks" class="toc-h2 toc-link" data-title="DELETE User Snacks">DELETE User Snacks</a>
+                  </li>
+                  <li>
+                    <a href="#delete-user" class="toc-h2 toc-link" data-title="DELETE User">DELETE User</a>
                   </li>
               </ul>
           </li>
@@ -402,6 +408,11 @@ Live - Successfully turned caffeine into code
 </tr>
 </thead><tbody>
 <tr>
+<td>name</td>
+<td>String: true</td>
+<td>Must be at least 1 character long...</td>
+</tr>
+<tr>
 <td>email</td>
 <td>String: true</td>
 <td>Must be a valid email address. Throw away emails will get rejected.</td>
@@ -417,13 +428,13 @@ Live - Successfully turned caffeine into code
 <td>This is the server-side generated company code that is given to invited users. NOT users signing up for the first time</td>
 </tr>
 </tbody></table>
-<h2 id='post-register-company'>POST Register Company</h2>
+<h2 id='put-register-company'>PUT Register Company</h2>
 <aside class="success">
 Live - Successfully turned caffeine into code
 </aside>
 
 <blockquote>
-<p>Example POST Request</p>
+<p>Example PUT Request</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lambda School"</span><span class="p">,</span><span class="w">
@@ -445,8 +456,8 @@ Live - Successfully turned caffeine into code
     </span><span class="s2">"company_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='endpoint-2'>Endpoint</h3>
-<p><code>POST /auth/register/company</code></p>
-<h3 id='post-register-company-body-parameters'>POST Register Company Body Parameters</h3>
+<p><code>PUT /auth/register/company/{company_id}</code></p>
+<h3 id='put-register-company-body-parameters'>PUT Register Company Body Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -543,8 +554,8 @@ Live - Successfully turned caffeine into code
 <h1 id='company'>Company</h1>
 <p>The company endpoints will be used for most operations when the User that is logged in is the admin on the account.</p>
 <h2 id='get-company-info'>GET Company Info</h2>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 <blockquote>
@@ -552,6 +563,7 @@ Under construction - Code gremlins currently turning caffeine into code
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lambda School"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company-code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lambda-school-snackify-123"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(123) 456-7890"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Palo Alto"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
@@ -575,11 +587,13 @@ Under construction - Code gremlins currently turning caffeine into code
 </tr>
 </tbody></table>
 <h2 id='put-company-info'>PUT Company Info</h2>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 <p>Updates the company&#39;s info, and is only allowed if the user is the admin, and associated with the same company. But I don&#39;t know what kind of voodoo magic the client or user may perform to screw that up.</p>
+
+<p>NOTE: The package ID is required for this operation... which should really only happen if the user is updating the company&#39;s name or phone or something like that.</p>
 
 <blockquote>
 <p>Example PUT Request</p>
@@ -596,7 +610,9 @@ Under construction - Code gremlins currently turning caffeine into code
 <p>Example Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"company_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gamma School"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lambda-school-snackify-123"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(890) 765-4321"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Salt Lake City"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UT"</span><span class="p">,</span><span class="w">
@@ -634,7 +650,7 @@ Under construction - Code gremlins currently turning caffeine into code
 </tr>
 <tr>
 <td>package_ID</td>
-<td>Int: false</td>
+<td>Int: true</td>
 <td>Package ID which will only be 1, 2, 3, or 4, will default to 1.</td>
 </tr>
 </tbody></table>
@@ -653,8 +669,8 @@ Under construction - Code gremlins currently turning caffeine into code
 </tr>
 </tbody></table>
 <h2 id='get-company-snacks'>GET Company Snacks</h2>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 <p>These are the snacks the company has selected to be delivered.</p>
@@ -696,8 +712,8 @@ Under construction - Code gremlins currently turning caffeine into code
 </tr>
 </tbody></table>
 <h2 id='post-company-snacks'>POST Company Snacks</h2>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 <p>This will manifest the snack to the company&#39;s selected snacks.</p>
@@ -708,7 +724,8 @@ Under construction - Code gremlins currently turning caffeine into code
 <p>Example Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"snack"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Doritos"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"snack_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
     </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='endpoint-4'>Endpoint</h3>
@@ -733,8 +750,8 @@ Under construction - Code gremlins currently turning caffeine into code
 </tr>
 </tbody></table>
 <h2 id='put-company-snacks'>PUT Company Snacks</h2>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 <p>This will primarily update the quanitity requested on the users</p>
@@ -750,7 +767,8 @@ Under construction - Code gremlins currently turning caffeine into code
 <p>Example Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"snack"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Doritos"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"snack_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
     </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='endpoint-5'>Endpoint</h3>
@@ -789,8 +807,8 @@ Under construction - Code gremlins currently turning caffeine into code
 </tr>
 </tbody></table>
 <h2 id='delete-company-snack'>DELETE Company Snack</h2>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 <p>This will remove the specific snack ID from the company ID. Don&#39;t worry, it&#39;s not gonna delete any snacks from the database.</p>
@@ -844,18 +862,24 @@ Under construction - Code gremlins currently turning caffeine into code
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smokehouse Almonds"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue Diamond"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16 oz bag"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.riteaid.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/4/041570030837.jpg"</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.riteaid.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/4/041570030837.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"suggested_by"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"Steve Ballmer"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Brad Pitt"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Benedict Cumberbatch"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Skittles"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrigley"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54 oz bag"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg"</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"suggested_by"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Tom Holland"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Jimmy Fallon"</span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='endpoint-7'>Endpoint</h3>
-<p><code>GET /company/{company_ID/suggested</code></p>
+<p><code>GET /company/{company_ID/suggestions</code></p>
 <h3 id='url-parameters-7'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -871,12 +895,6 @@ Under construction - Code gremlins currently turning caffeine into code
 </tr>
 </tbody></table>
 <h2 id='get-company-users'>GET Company Users</h2>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
-</aside>
-
-<p>Retrieve all the users from the mainframe that are assocaited with the company</p>
-
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -887,23 +905,55 @@ Under construction - Code gremlins currently turning caffeine into code
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amanda Lane"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amanda@lambdaschool.com"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"admin"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Almonds"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flaming hot Cheetos"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Olive Hummus"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Elon Musk"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elon@lambdaschool.com"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"admin"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+            </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mars Bars"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Milkyway Bars"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"George Washington"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"george@lambdaschool.com"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"admin"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+            </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cherries"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='endpoint-8'>Endpoint</h3>
+</span></code></pre>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<p>Retrieve all the users and their snacks from the mainframe that are assocaited with the company.</p>
+
+<p>NOTE: The response on the right is subject to change... I may just return all the data to you if it&#39;s easier.</p>
+<h3 id='endpoint-8'>Endpoint</h3>
 <p><code>GET /company/{company_ID}/users</code></p>
 <h3 id='url-parameters-8'>URL Parameters</h3>
 <table><thead>
@@ -952,15 +1002,18 @@ If I delete it, then they can just add back in, but then the user would have to 
 <h1 id='users'>Users</h1>
 <p>The users endpoints are for users of a company but NOT the admins.</p>
 <h2 id='get-user-info'>GET User Info</h2>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
+
+<p>Will only allow a user to request their own information. This is assuming that only admins will need to access all of the users and that can be done at <code>GET /company/{company_ID}/users</code></p>
 
 <blockquote>
 <p>Example Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"company_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lambda School"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amanda Lane"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amanda@lambdaschool.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -994,19 +1047,60 @@ Under construction - Code gremlins currently turning caffeine into code
 <td>Integer value of the users ID</td>
 </tr>
 </tbody></table>
-<h2 id='post-user-snacks'>POST User Snacks</h2>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<h2 id='put-user-info'>PUT User Info</h2>
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 <blockquote>
+<p>Example PUT request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jimbo Fisher"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jimbo@fisher.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jimbos-fat-face.myfancyurl.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='endpoint-2'>Endpoint</h3>
+<p><code>PUT /users/{user_ID}</code></p>
+<h3 id='body-parameters'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String: true</td>
+<td>Must be at least 1 character long...</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String: true</td>
+<td>Must be a valid email address. Throw away emails will get rejected.</td>
+</tr>
+<tr>
+<td>img_url</td>
+<td>String: false</td>
+<td>Will be the url to their gravatar</td>
+</tr>
+</tbody></table>
+<h2 id='post-user-snacks'>POST User Snacks</h2>
+<aside class="success">
+Live - Successfully turned caffeine into code
+</aside>
+
+<blockquote>
+<p>Example Request URL: <code>/users/2/snacks/5</code></p>
+
 <p>Example Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully manifested suggested snack to company's suggested snacks"</span><span class="w">
+    </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"snack_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='endpoint-2'>Endpoint</h3>
+</span></code></pre><h3 id='endpoint-3'>Endpoint</h3>
 <p><code>POST /users/{user_ID}/snacks/{snack_ID}</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
@@ -1028,8 +1122,8 @@ Under construction - Code gremlins currently turning caffeine into code
 </tr>
 </tbody></table>
 <h2 id='delete-user-snacks'>DELETE User Snacks</h2>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 <p>Will remove the specific user&#39;s suggested snacks.</p>
@@ -1041,7 +1135,7 @@ Under construction - Code gremlins currently turning caffeine into code
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully destroyed suggested snack from user and user's suggested snacks"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='endpoint-3'>Endpoint</h3>
+</span></code></pre><h3 id='endpoint-4'>Endpoint</h3>
 <p><code>DELETE /users/{user_ID}/snacks/{snack_ID}</code></p>
 <h3 id='url-parameters-3'>URL Parameters</h3>
 <table><thead>
@@ -1062,9 +1156,17 @@ Under construction - Code gremlins currently turning caffeine into code
 <td>Integer value of the snacks ID</td>
 </tr>
 </tbody></table>
+<h2 id='delete-user'>DELETE User</h2>
+<aside class="success">
+Live - Successfully turned caffeine into code
+</aside>
+
+<p>This is permenantly delete the user from the database and remove the association from the company</p>
+<h3 id='endpoint-5'>Endpoint</h3>
+<p><code>DELETE /users/{user_ID}</code></p>
 <h1 id='packages'>Packages</h1><h2 id='get-packages'>GET Packages</h2>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 <blockquote>
@@ -1103,8 +1205,8 @@ Under construction - Code gremlins currently turning caffeine into code
 <h1 id='snacks'>Snacks</h1>
 <p>The snacks endpoint will return a paginated result of the snacks that are available</p>
 <h2 id='get-snacks'>GET Snacks</h2>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 <h3 id='endpoint'>Endpoint</h3>
 <p><code>GET /snacks</code></p>
