@@ -86,17 +86,18 @@ If the company code doesn't exist, everything explodes. JK. But please don't let
 
 | Parameter    | Required      | Description                                                                                                            |
 | ------------ | ------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| name         | String: true  | Must be at least 1 character long...                                                                                   |
 | email        | String: true  | Must be a valid email address. Throw away emails will get rejected.                                                    |
 | password     | String: true  | Must be at least 8 characters long.                                                                                    |
 | company_code | String: false | This is the server-side generated company code that is given to invited users. NOT users signing up for the first time |
 
-## POST Register Company
+## PUT Register Company
 
 <aside class="success">
 Live - Successfully turned caffeine into code
 </aside>
 
-> Example POST Request
+> Example PUT Request
 
 ```json
 {
@@ -123,9 +124,9 @@ Live - Successfully turned caffeine into code
 
 ### Endpoint
 
-`POST /auth/register/company`
+`PUT /auth/register/company/{company_id}`
 
-### POST Register Company Body Parameters
+### PUT Register Company Body Parameters
 
 | Parameter  | Required     | Description                                                                                   |
 | ---------- | ------------ | --------------------------------------------------------------------------------------------- |

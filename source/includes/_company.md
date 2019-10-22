@@ -4,8 +4,8 @@ The company endpoints will be used for most operations when the User that is log
 
 ## GET Company Info
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 > Example Response
@@ -13,6 +13,7 @@ Under construction - Code gremlins currently turning caffeine into code
 ```json
 {
     "name": "Lambda School",
+    "company-code": "lambda-school-snackify-123",
     "phone": "(123) 456-7890",
     "city": "Palo Alto",
     "state": "CA",
@@ -33,11 +34,13 @@ Under construction - Code gremlins currently turning caffeine into code
 
 ## PUT Company Info
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 Updates the company's info, and is only allowed if the user is the admin, and associated with the same company. But I don't know what kind of voodoo magic the client or user may perform to screw that up.
+
+NOTE: The package ID is required for this operation... which should really only happen if the user is updating the company's name or phone or something like that.
 
 > Example PUT Request
 
@@ -55,7 +58,9 @@ Updates the company's info, and is only allowed if the user is the admin, and as
 
 ```json
 {
+    "company_ID": 1,
     "name": "Gamma School",
+    "company_code": "lambda-school-snackify-123",
     "phone": "(890) 765-4321",
     "city": "Salt Lake City",
     "state": "UT",
@@ -75,7 +80,7 @@ Updates the company's info, and is only allowed if the user is the admin, and as
 | phone      | String: False | Must be at least a 10 character string.                         |
 | city       | String: false | City the company is located at                                  |
 | state      | String: false | State the company located at                                    |
-| package_ID | Int: false    | Package ID which will only be 1, 2, 3, or 4, will default to 1. |
+| package_ID | Int: true     | Package ID which will only be 1, 2, 3, or 4, will default to 1. |
 
 ### URL Parameters
 
@@ -85,8 +90,8 @@ Updates the company's info, and is only allowed if the user is the admin, and as
 
 ## GET Company Snacks
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 These are the snacks the company has selected to be delivered.
@@ -125,8 +130,8 @@ These are the snacks the company has selected to be delivered.
 
 ## POST Company Snacks
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 This will manifest the snack to the company's selected snacks.
@@ -137,7 +142,8 @@ It will automatically set the quantity to 1 for the snack.
 
 ```json
 {
-    "snack": "Original Doritos",
+    "company_ID": 1,
+    "snack_ID": 4,
     "quantity": 1
 }
 ```
@@ -155,8 +161,8 @@ It will automatically set the quantity to 1 for the snack.
 
 ## PUT Company Snacks
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 This will primarily update the quanitity requested on the users
@@ -173,7 +179,8 @@ This will primarily update the quanitity requested on the users
 
 ```json
 {
-    "snack": "Original Doritos",
+    "company_id": 1,
+    "snack_id": 2,
     "quantity": 3
 }
 ```
@@ -197,8 +204,8 @@ This will primarily update the quanitity requested on the users
 
 ## DELETE Company Snack
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 This will remove the specific snack ID from the company ID. Don't worry, it's not gonna delete any snacks from the database.
@@ -245,13 +252,19 @@ These are the snacks suggested by the company's users.
             "name": "Smokehouse Almonds",
             "brand": "Blue Diamond",
             "uom": "16 oz bag",
-            "img_url": "https://www.riteaid.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/4/041570030837.jpg"
+            "img_url": "https://www.riteaid.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/4/041570030837.jpg",
+            "suggested_by": [
+                "Steve Ballmer",
+                "Brad Pitt",
+                "Benedict Cumberbatch"
+            ]
         },
         {
             "name": "Original Skittles",
             "brand": "Wrigley",
             "uom": "54 oz bag",
-            "img_url": "https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg"
+            "img_url": "https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg",
+            "suggested_by": ["Tom Holland", "Jimmy Fallon"]
         }
     ]
 }
@@ -259,7 +272,7 @@ These are the snacks suggested by the company's users.
 
 ### Endpoint
 
-`GET /company/{company_ID/suggested`
+`GET /company/{company_ID/suggestions`
 
 ### URL Parameters
 
@@ -268,12 +281,6 @@ These are the snacks suggested by the company's users.
 | company_ID | Int: true | Integer value of company's ID |
 
 ## GET Company Users
-
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
-</aside>
-
-Retrieve all the users from the mainframe that are assocaited with the company
 
 > Example Response
 
@@ -285,23 +292,55 @@ Retrieve all the users from the mainframe that are assocaited with the company
             "name": "Amanda Lane",
             "email": "amanda@lambdaschool.com",
             "admin": true,
-            "user_ID": 1
+            "user_ID": 1,
+            "snacks": [
+                {
+                    "name": "Original Almonds"
+                },
+                {
+                    "name": "Flaming hot Cheetos"
+                },
+                {
+                    "name": "Olive Hummus"
+                }
+            ]
         },
         {
             "name": "Elon Musk",
             "email": "elon@lambdaschool.com",
             "admin": false,
-            "user_ID": 2
+            "user_ID": 2,
+            "snacks": [
+                {
+                    "name": "Mars Bars"
+                },
+                {
+                    "name": "Milkyway Bars"
+                }
+            ]
         },
         {
             "name": "George Washington",
             "email": "george@lambdaschool.com",
             "admin": false,
-            "user_ID": 3
+            "user_ID": 3,
+            "snacks": [
+                {
+                    "name": "Cherries"
+                }
+            ]
         }
     ]
 }
 ```
+
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+Retrieve all the users and their snacks from the mainframe that are assocaited with the company.
+
+NOTE: The response on the right is subject to change... I may just return all the data to you if it's easier.
 
 ### Endpoint
 

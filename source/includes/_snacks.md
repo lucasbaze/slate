@@ -4,8 +4,8 @@ The snacks endpoint will return a paginated result of the snacks that are availa
 
 ## GET Snacks
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 ### Endpoint

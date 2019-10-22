@@ -4,15 +4,18 @@ The users endpoints are for users of a company but NOT the admins.
 
 ## GET User Info
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
+
+Will only allow a user to request their own information. This is assuming that only admins will need to access all of the users and that can be done at `GET /company/{company_ID}/users`
 
 > Example Response
 
 ```json
 {
     "company_ID": 2,
+    "company_name": "Lambda School",
     "name": "Amanda Lane",
     "email": "amanda@lambdaschool.com",
     "snacks": [
@@ -42,18 +45,48 @@ Under construction - Code gremlins currently turning caffeine into code
 | -------- | --------- | ----------------------------- |
 | user_ID  | Int: true | Integer value of the users ID |
 
+## PUT User Info
+
+<aside class="success">
+Live - Successfully turned caffeine into code
+</aside>
+
+> Example PUT request
+
+```json
+{
+    "name": "Jimbo Fisher",
+    "email": "jimbo@fisher.com",
+    "img_url": "jimbos-fat-face.myfancyurl.com"
+}
+```
+
+### Endpoint
+
+`PUT /users/{user_ID}`
+
+### Body Parameters
+
+| Parameter | Required      | Description                                                         |
+| --------- | ------------- | ------------------------------------------------------------------- |
+| name      | String: true  | Must be at least 1 character long...                                |
+| email     | String: true  | Must be a valid email address. Throw away emails will get rejected. |
+| img_url   | String: false | Will be the url to their gravatar                                   |
+
 ## POST User Snacks
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
+
+> Example Request URL: `/users/2/snacks/5`
 
 > Example Response
 
 ```json
 {
-    "status": true,
-    "message": "Successfully manifested suggested snack to company's suggested snacks"
+    "user_ID": 2,
+    "snack_ID": 5
 }
 ```
 
@@ -70,8 +103,8 @@ Under construction - Code gremlins currently turning caffeine into code
 
 ## DELETE User Snacks
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 Will remove the specific user's suggested snacks.
@@ -95,3 +128,15 @@ Will remove the specific user's suggested snacks.
 | -------- | --------- | ------------------------------ |
 | user_ID  | Int: true | Integer value of the users ID  |
 | snack_ID | Int: true | Integer value of the snacks ID |
+
+## DELETE User
+
+<aside class="success">
+Live - Successfully turned caffeine into code
+</aside>
+
+This is permenantly delete the user from the database and remove the association from the company
+
+### Endpoint
+
+`DELETE /users/{user_ID}`
