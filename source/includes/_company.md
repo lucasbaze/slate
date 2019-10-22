@@ -272,13 +272,49 @@ These are the snacks suggested by the company's users.
 
 ### Endpoint
 
-`GET /company/{company_ID/suggestions`
+`GET /company/{company_ID}/suggestions`
 
 ### URL Parameters
 
 | Property   | Required  | Description                   |
 | ---------- | --------- | ----------------------------- |
 | company_ID | Int: true | Integer value of company's ID |
+
+## POST Company User
+
+> Example POST request
+
+```json
+{
+    "name": "Captain Kirk",
+    "email": "kirk@starfleet.com"
+}
+```
+
+> Example response
+
+```json
+{
+    "message": "sent Captain Kirk your company_code"
+}
+```
+
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+This will be the "email" sent to the user in order for them to sign up with the company code.
+
+### Endpoint
+
+`POST /company/{company_id}/users`
+
+### Body Parameters
+
+| Property | Required     | Description                       |
+| -------- | ------------ | --------------------------------- |
+| name     | String: true | name of the person being added    |
+| email    | String: true | email to send the company code to |
 
 ## GET Company Users
 
