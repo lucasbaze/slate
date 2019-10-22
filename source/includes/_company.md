@@ -106,13 +106,15 @@ These are the snacks the company has selected to be delivered.
             "name": "Original Skittles",
             "brand": "Wrigley",
             "uom": "54 oz bag",
-            "img_url": "https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg"
+            "img_url": "https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg",
+            "quantity": 2
         },
         {
             "name": "Original Doritos",
             "brand": "Frito-Lay",
             "uom": "16 x 9oz bags",
-            "img_url": "https://target.scene7.com/is/image/Target/GUEST_ac2b08b4-12e8-496c-ab09-dd530740da9c?wid=488&hei=488&fmt=pjpeg"
+            "img_url": "https://target.scene7.com/is/image/Target/GUEST_ac2b08b4-12e8-496c-ab09-dd530740da9c?wid=488&hei=488&fmt=pjpeg",
+            "quantity": 3
         }
     ]
 }
@@ -234,14 +236,6 @@ Basically the exact same as the POST
 
 ## GET Company Suggested Snacks
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
-</aside>
-
-These are the gooey yum yum's those employees desperately crave.
-
-These are the snacks suggested by the company's users.
-
 > Example Response
 
 ```json
@@ -269,6 +263,14 @@ These are the snacks suggested by the company's users.
     ]
 }
 ```
+
+<aside class="success">
+Live - Successfully turned caffeine into code
+</aside>
+
+These are the gooey yum yum's those employees desperately crave.
+
+These are the snacks suggested by the company's users.
 
 ### Endpoint
 
@@ -330,15 +332,9 @@ This will be the "email" sent to the user in order for them to sign up with the 
             "admin": true,
             "user_ID": 1,
             "snacks": [
-                {
-                    "name": "Original Almonds"
-                },
-                {
-                    "name": "Flaming hot Cheetos"
-                },
-                {
-                    "name": "Olive Hummus"
-                }
+                "Original Almonds",
+                "Flaming hot Cheetos",
+                "Olive Hummus"
             ]
         },
         {
@@ -346,32 +342,21 @@ This will be the "email" sent to the user in order for them to sign up with the 
             "email": "elon@lambdaschool.com",
             "admin": false,
             "user_ID": 2,
-            "snacks": [
-                {
-                    "name": "Mars Bars"
-                },
-                {
-                    "name": "Milkyway Bars"
-                }
-            ]
+            "snacks": ["Mars Bars", "Milkyway Bars"]
         },
         {
             "name": "George Washington",
             "email": "george@lambdaschool.com",
             "admin": false,
             "user_ID": 3,
-            "snacks": [
-                {
-                    "name": "Cherries"
-                }
-            ]
+            "snacks": ["Cherries"]
         }
     ]
 }
 ```
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 Retrieve all the users and their snacks from the mainframe that are assocaited with the company.
