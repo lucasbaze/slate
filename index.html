@@ -263,6 +263,9 @@
                     <a href="#get-company-suggested-snacks" class="toc-h2 toc-link" data-title="GET Company Suggested Snacks">GET Company Suggested Snacks</a>
                   </li>
                   <li>
+                    <a href="#post-company-user" class="toc-h2 toc-link" data-title="POST Company User">POST Company User</a>
+                  </li>
+                  <li>
                     <a href="#get-company-users" class="toc-h2 toc-link" data-title="GET Company Users">GET Company Users</a>
                   </li>
                   <li>
@@ -879,7 +882,7 @@ Under construction - Code gremlins currently turning caffeine into code
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='endpoint-7'>Endpoint</h3>
-<p><code>GET /company/{company_ID/suggestions</code></p>
+<p><code>GET /company/{company_ID}/suggestions</code></p>
 <h3 id='url-parameters-7'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -892,6 +895,48 @@ Under construction - Code gremlins currently turning caffeine into code
 <td>company_ID</td>
 <td>Int: true</td>
 <td>Integer value of company&#39;s ID</td>
+</tr>
+</tbody></table>
+<h2 id='post-company-user'>POST Company User</h2>
+<blockquote>
+<p>Example POST request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Captain Kirk"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"kirk@starfleet.com"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Example response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sent Captain Kirk your company_code"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="warning">
+Under construction - Code gremlins currently turning caffeine into code
+</aside>
+
+<p>This will be the &quot;email&quot; sent to the user in order for them to sign up with the company code.</p>
+<h3 id='endpoint-8'>Endpoint</h3>
+<p><code>POST /company/{company_id}/users</code></p>
+<h3 id='body-parameters-3'>Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>String: true</td>
+<td>name of the person being added</td>
+</tr>
+<tr>
+<td>email</td>
+<td>String: true</td>
+<td>email to send the company code to</td>
 </tr>
 </tbody></table>
 <h2 id='get-company-users'>GET Company Users</h2>
@@ -953,7 +998,7 @@ Under construction - Code gremlins currently turning caffeine into code
 <p>Retrieve all the users and their snacks from the mainframe that are assocaited with the company.</p>
 
 <p>NOTE: The response on the right is subject to change... I may just return all the data to you if it&#39;s easier.</p>
-<h3 id='endpoint-8'>Endpoint</h3>
+<h3 id='endpoint-9'>Endpoint</h3>
 <p><code>GET /company/{company_ID}/users</code></p>
 <h3 id='url-parameters-8'>URL Parameters</h3>
 <table><thead>
@@ -978,7 +1023,7 @@ Under construction - Code gremlins currently turning caffeine into code
 
 <p>If I set revoked, I&#39;d have to unset flag to let them back in
 If I delete it, then they can just add back in, but then the user would have to create another acccount.</p>
-<h3 id='endpoint-9'>Endpoint</h3>
+<h3 id='endpoint-10'>Endpoint</h3>
 <p><code>DELETE /company/{company_ID}/users/{user_ID}</code></p>
 <h3 id='url-parameters-9'>URL Parameters</h3>
 <table><thead>
