@@ -688,13 +688,15 @@ Live - Successfully turned caffeine into code
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Skittles"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrigley"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54 oz bag"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg"</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Doritos"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Frito-Lay"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16 x 9oz bags"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://target.scene7.com/is/image/Target/GUEST_ac2b08b4-12e8-496c-ab09-dd530740da9c?wid=488&amp;hei=488&amp;fmt=pjpeg"</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://target.scene7.com/is/image/Target/GUEST_ac2b08b4-12e8-496c-ab09-dd530740da9c?wid=488&amp;hei=488&amp;fmt=pjpeg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -847,14 +849,6 @@ Live - Successfully turned caffeine into code
 </tr>
 </tbody></table>
 <h2 id='get-company-suggested-snacks'>GET Company Suggested Snacks</h2>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
-</aside>
-
-<p>These are the gooey yum yum&#39;s those employees desperately crave.</p>
-
-<p>These are the snacks suggested by the company&#39;s users.</p>
-
 <blockquote>
 <p>Example Response</p>
 </blockquote>
@@ -881,7 +875,15 @@ Under construction - Code gremlins currently turning caffeine into code
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='endpoint-7'>Endpoint</h3>
+</span></code></pre>
+<aside class="success">
+Live - Successfully turned caffeine into code
+</aside>
+
+<p>These are the gooey yum yum&#39;s those employees desperately crave.</p>
+
+<p>These are the snacks suggested by the company&#39;s users.</p>
+<h3 id='endpoint-7'>Endpoint</h3>
 <p><code>GET /company/{company_ID}/suggestions</code></p>
 <h3 id='url-parameters-7'>URL Parameters</h3>
 <table><thead>
@@ -952,15 +954,9 @@ Under construction - Code gremlins currently turning caffeine into code
             </span><span class="s2">"admin"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
             </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Almonds"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flaming hot Cheetos"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Olive Hummus"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
+                </span><span class="s2">"Original Almonds"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Flaming hot Cheetos"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"Olive Hummus"</span><span class="w">
             </span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -968,31 +964,20 @@ Under construction - Code gremlins currently turning caffeine into code
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elon@lambdaschool.com"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"admin"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mars Bars"</span><span class="w">
-                </span><span class="p">},</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Milkyway Bars"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">]</span><span class="w">
+            </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Mars Bars"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Milkyway Bars"</span><span class="p">]</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"George Washington"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"george@lambdaschool.com"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"admin"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cherries"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">]</span><span class="w">
+            </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Cherries"</span><span class="p">]</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 <p>Retrieve all the users and their snacks from the mainframe that are assocaited with the company.</p>
