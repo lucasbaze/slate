@@ -375,8 +375,8 @@ NOTE: The response on the right is subject to change... I may just return all th
 
 ## DELETE Company User
 
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 Need to determine if I'm going to remove the user from teh database or just set a revoked flag onto the user.

@@ -155,12 +155,26 @@ Live - Successfully turned caffeine into code
 
 ```json
 {
-    "name": "Amanda Lane",
-    "company_name": "Lambda School",
-    "company_ID": 1,
     "user_ID": 1,
+    "company_ID": 2,
+    "company_name": "Lambda School",
+    "name": "Amanda Lane",
+    "email": "amanda@lambdaschool.com",
     "admin": true,
-    "email": "amanda@lambdaschool.com"
+    "snacks": [
+        {
+            "name": "Smokehouse Almonds",
+            "brand": "Blue Diamond",
+            "uom": "16 oz bag",
+            "img_url": "https://www.riteaid.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/4/041570030837.jpg"
+        },
+        {
+            "name": "Original Skittles",
+            "brand": "Wrigley",
+            "uom": "54 oz bag",
+            "img_url": "https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg"
+        }
+    ]
 }
 ```
 

@@ -18,6 +18,7 @@ Will only allow a user to request their own information. This is assuming that o
     "company_name": "Lambda School",
     "name": "Amanda Lane",
     "email": "amanda@lambdaschool.com",
+    "admin": true,
     "snacks": [
         {
             "name": "Smokehouse Almonds",
