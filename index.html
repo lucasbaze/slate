@@ -334,17 +334,9 @@
 <p>To authorize, it is recommended to create an axios handler in a separete folder with the following:</p>
 </blockquote>
 <pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'axios'</span><span class="p">);</span>
-
-<span class="kr">const</span> <span class="nx">axiosInstance</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-        <span class="na">baseURL</span><span class="p">:</span> <span class="s1">'https://afternoon-tor-81402.herokuapp.com'</span><span class="p">,</span>
-        <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-            <span class="na">withCredentials</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-        <span class="p">},</span>
-    <span class="p">});</span>
-<span class="p">};</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">axiosInstance</span><span class="p">;</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">baseURL</span> <span class="o">=</span> <span class="s1">'https://afternoon-tor-81402.herokuapp.com'</span><span class="p">;</span>
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">axiosInstance</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">;</span>
 </code></pre>
 <p>Snackify utilizes express-sessions to maintain session information. In order to access any of the endpoints, you will need to login at <a href="http://snackify.zeit.io">Snackify Register</a>. &lt;- will need to be replaced.</p>
 
