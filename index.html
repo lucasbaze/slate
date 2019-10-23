@@ -367,6 +367,7 @@
     </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Judge Judy"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"judy@lambdaschool.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.riteaid.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/4/041570030837.jpg"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"company_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
     </span><span class="s2">"admin"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -516,6 +517,7 @@ Live - Successfully turned caffeine into code
     </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lambda School"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amanda Lane"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amanda@lambdaschool.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.riteaid.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/4/041570030837.jpg"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"admin"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
@@ -585,6 +587,7 @@ Live - Successfully turned caffeine into code
     </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Palo Alto"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CA"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"package_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">199</span><span class="p">,</span><span class="w">
     </span><span class="s2">"company_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='endpoint'>Endpoint</h3>
@@ -1257,11 +1260,20 @@ Live - Successfully turned caffeine into code
 <p><code>GET /snacks</code></p>
 
 <blockquote>
+<p>Example Request
+<code>/snacks?page=2&amp;limit=15</code></p>
+
 <p>Example Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"first"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url to first level of snacks"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url to next level of snacks"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"previous"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"next"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smokehouse Almonds"</span><span class="p">,</span><span class="w">
@@ -1283,7 +1295,26 @@ Live - Successfully turned caffeine into code
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='response-description'>Response Description</h3>
+</span></code></pre><h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>1</td>
+<td>The start &quot;page&quot; to get snacks. Eg. Page = 2, Limit = 15: start at snack ID of 15 and go to Snack 30</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>20</td>
+<td>The number of snacks you want back</td>
+</tr>
+</tbody></table>
+<h3 id='response-description'>Response Description</h3>
 <table><thead>
 <tr>
 <th>Property</th>
@@ -1291,12 +1322,20 @@ Live - Successfully turned caffeine into code
 </tr>
 </thead><tbody>
 <tr>
-<td>first</td>
-<td>url of the first level of snacks</td>
+<td>previous/page</td>
+<td>The page number to get the previous limit number of snacks</td>
 </tr>
 <tr>
-<td>next</td>
-<td>url of the next level of snacks</td>
+<td>previous/limit</td>
+<td>The same limit given or default of 20</td>
+</tr>
+<tr>
+<td>next/page</td>
+<td>The page number to get the next limit number of snacks</td>
+</tr>
+<tr>
+<td>next/limit</td>
+<td>The same limit given or default of 20</td>
 </tr>
 <tr>
 <td>snacks/name</td>
