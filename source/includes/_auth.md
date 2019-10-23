@@ -41,6 +41,7 @@ No need to save a token or anything client side. That's for node noobs. The serv
     "user_ID": 15,
     "name": "Judge Judy",
     "email": "judy@lambdaschool.com",
+    "img_url": "https://www.riteaid.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/4/041570030837.jpg",
     "company_ID": 4,
     "admin": false
 }
@@ -160,6 +161,7 @@ Live - Successfully turned caffeine into code
     "company_name": "Lambda School",
     "name": "Amanda Lane",
     "email": "amanda@lambdaschool.com",
+    "img_url": "https://www.riteaid.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/4/041570030837.jpg",
     "admin": true,
     "snacks": [
         {

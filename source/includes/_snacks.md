@@ -12,12 +12,21 @@ Live - Successfully turned caffeine into code
 
 `GET /snacks`
 
+> Example Request
+> `/snacks?page=2&limit=15`
+
 > Example Response
 
 ```json
 {
-    "first": "url to first level of snacks",
-    "next": "url to next level of snacks",
+    "previous": {
+        "page": 1,
+        "limit": 15
+    },
+    "next": {
+        "page": 3,
+        "limit": 15
+    },
     "snacks": [
         {
             "name": "Smokehouse Almonds",
@@ -41,12 +50,21 @@ Live - Successfully turned caffeine into code
 }
 ```
 
+### Query Parameters
+
+| Parameter | Default | Description                                                                                          |
+| --------- | ------- | ---------------------------------------------------------------------------------------------------- |
+| page      | 1       | The start "page" to get snacks. Eg. Page = 2, Limit = 15: start at snack ID of 15 and go to Snack 30 |
+| limit     | 20      | The number of snacks you want back                                                                   |
+
 ### Response Description
 
 | Property       | Description                                                                                            |
 | -------------- | ------------------------------------------------------------------------------------------------------ |
-| first          | url of the first level of snacks                                                                       |
-| next           | url of the next level of snacks                                                                        |
+| previous/page  | The page number to get the previous limit number of snacks                                             |
+| previous/limit | The same limit given or default of 20                                                                  |
+| next/page      | The page number to get the next limit number of snacks                                                 |
+| next/limit     | The same limit given or default of 20                                                                  |
 | snacks/name    | Name of the snack.                                                                                     |
 | snacks/brand   | Company brand of the snack.                                                                            |
 | snacks/oum     | Unit of Measure. If the user changes the quantity, this is how much it will increment or decrement by. |

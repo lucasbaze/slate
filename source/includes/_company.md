@@ -18,6 +18,7 @@ Live - Successfully turned caffeine into code
     "city": "Palo Alto",
     "state": "CA",
     "package_ID": 4,
+    "price": 199,
     "company_ID": 32
 }
 ```
