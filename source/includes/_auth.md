@@ -4,17 +4,9 @@
 
 ```javascript
 const axios = require('axios');
-
-const axiosInstance = () => {
-    return axios.create({
-        baseURL: 'https://afternoon-tor-81402.herokuapp.com',
-        headers: {
-            withCredentials: true,
-        },
-    });
-};
-
-module.exports = axiosInstance;
+axios.defaults.withCredentials = true;
+axios.defaults.baseURL = 'https://afternoon-tor-81402.herokuapp.com';
+export const axiosInstance = axios;
 ```
 
 Snackify utilizes express-sessions to maintain session information. In order to access any of the endpoints, you will need to login at [Snackify Register](http://snackify.zeit.io). <- will need to be replaced.
