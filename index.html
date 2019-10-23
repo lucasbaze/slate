@@ -511,12 +511,26 @@ Live - Successfully turned caffeine into code
 <p>Example Response</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amanda Lane"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lambda School"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"company_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"user_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_ID"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lambda School"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amanda Lane"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amanda@lambdaschool.com"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"admin"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amanda@lambdaschool.com"</span><span class="w">
+    </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smokehouse Almonds"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Blue Diamond"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16 oz bag"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.riteaid.com/shop/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/0/4/041570030837.jpg"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Skittles"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrigley"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54 oz bag"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='endpoint-3'>Endpoint</h3>
 <p><code>POST /auth/login</code></p>
@@ -1000,8 +1014,8 @@ Live - Successfully turned caffeine into code
 </tr>
 </tbody></table>
 <h2 id='delete-company-user'>DELETE Company User</h2>
-<aside class="warning">
-Under construction - Code gremlins currently turning caffeine into code
+<aside class="success">
+Live - Successfully turned caffeine into code
 </aside>
 
 <p>Need to determine if I&#39;m going to remove the user from teh database or just set a revoked flag onto the user.</p>
@@ -1046,6 +1060,7 @@ Live - Successfully turned caffeine into code
     </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lambda School"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amanda Lane"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"amanda@lambdaschool.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"admin"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smokehouse Almonds"</span><span class="p">,</span><span class="w">
