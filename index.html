@@ -310,6 +310,14 @@
               </ul>
           </li>
           <li>
+            <a href="#billing" class="toc-h1 toc-link" data-title="Billing">Billing</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#post-stripe" class="toc-h2 toc-link" data-title="POST Stripe">POST Stripe</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -1287,6 +1295,27 @@ Live - Successfully turned caffeine into code
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Example Request
+<code>/snacks?search=original</code></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"snacks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Skittles"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wrigley"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"54 oz bag"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Original Doritos"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Frito-Lay"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"uom"</span><span class="p">:</span><span class="w"> </span><span class="s2">"16 x 9oz bags"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"img_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://target.scene7.com/is/image/Target/GUEST_ac2b08b4-12e8-496c-ab09-dd530740da9c?wid=488&amp;hei=488&amp;fmt=pjpeg"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre><h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -1295,6 +1324,11 @@ Live - Successfully turned caffeine into code
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>search</td>
+<td>&#39;&#39;</td>
+<td>The search query to search by name of snacks</td>
+</tr>
 <tr>
 <td>page</td>
 <td>1</td>
@@ -1344,6 +1378,55 @@ Live - Successfully turned caffeine into code
 <tr>
 <td>snacks/img_url</td>
 <td>A url for an unformatted picture of the snack.</td>
+</tr>
+</tbody></table>
+<h1 id='billing'>Billing</h1>
+<p>The snacks endpoint will return a paginated result of the snacks that are available</p>
+<h2 id='post-stripe'>POST Stripe</h2>
+<blockquote>
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">199.00</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;token&gt;</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Example Success Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Successfully charged the user"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Example Failue Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Application shit the bed"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="success">
+Live - Successfully turned caffeine into code
+</aside>
+<h3 id='endpoint'>Endpoint</h3>
+<p><code>POST billing/stripe</code></p>
+<h3 id='body-description'>Body Description</h3>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>price</td>
+<td>Float: true</td>
+<td>The price to charge the user</td>
+</tr>
+<tr>
+<td>token</td>
+<td>String: true</td>
+<td>The token returned by stripe to authorize the charge</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
