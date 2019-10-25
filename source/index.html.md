@@ -14,6 +14,7 @@ includes:
     - users
     - package
     - snacks
+    - billing
     - errors
 
 search: true

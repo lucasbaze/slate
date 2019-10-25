@@ -50,10 +50,33 @@ Live - Successfully turned caffeine into code
 }
 ```
 
+> Example Request
+> `/snacks?search=original`
+
+```json
+{
+    "snacks": [
+        {
+            "name": "Original Skittles",
+            "brand": "Wrigley",
+            "uom": "54 oz bag",
+            "img_url": "https://images-na.ssl-images-amazon.com/images/I/71dHUI2QzEL._SX425_.jpg"
+        },
+        {
+            "name": "Original Doritos",
+            "brand": "Frito-Lay",
+            "uom": "16 x 9oz bags",
+            "img_url": "https://target.scene7.com/is/image/Target/GUEST_ac2b08b4-12e8-496c-ab09-dd530740da9c?wid=488&hei=488&fmt=pjpeg"
+        }
+    ]
+}
+```
+
 ### Query Parameters
 
 | Parameter | Default | Description                                                                                          |
 | --------- | ------- | ---------------------------------------------------------------------------------------------------- |
+| search    | ''      | The search query to search by name of snacks                                                         |
 | page      | 1       | The start "page" to get snacks. Eg. Page = 2, Limit = 15: start at snack ID of 15 and go to Snack 30 |
 | limit     | 20      | The number of snacks you want back                                                                   |
 
